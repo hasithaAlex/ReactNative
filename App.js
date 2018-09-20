@@ -16,7 +16,9 @@ export default class App extends React.Component {
       <View style={styles.global.mainContainer}>
         <View style={styles.navbar.appearance}>
 
-          <Text style={styles.navbar.title}>LK News</Text>
+          <Text style={[styles.navbar.title,componentStyles.titleItalic,{
+            fontWeight: 'bold' //inline style
+          }]}>LK News</Text>
           <Text style={styles.navbar.button}>Search</Text>
         </View>
         <View style={styles.global.content}>
@@ -30,5 +32,10 @@ export default class App extends React.Component {
   }
 }
 
-//Positioning -----------------------------------
-//var styles = require('./styles');
+//component specific styles when you separate with other styles--------------------------
+var componentStyles = StyleSheet.create({
+  titleItalic: {
+    fontStyle: 'italic', 
+    fontWeight: 'normal'
+  }
+});
