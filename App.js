@@ -5,37 +5,73 @@ import {
   Text, 
   View,
 } from 'react-native'; 
-//var { StyleSheet, Text, View } = require('react-native'); 
-
-import styles from './styles'; 
-
 
 export default class App extends React.Component {
+  
   render() {
     return (
-      <View style={styles.global.mainContainer}>
-        <View style={styles.navbar.appearance}>
-
-          <Text style={[styles.navbar.title,componentStyles.titleItalic,{
-            fontWeight: 'bold' //inline style
-          }]}>LK News</Text>
-          <Text style={styles.navbar.button}>Search</Text>
+      <View styles={styles.container}>
+        <View style={styles.top}>
+          <View style={styles.profileimaage}></View>
         </View>
-        <View style={styles.global.content}>
-          <Text>
-          is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-          </Text>
+        <View style={styles.center}></View>
+        <View style={styles.bottom}>
+          <View style={styles.bottomItem}>
+            <View style={styles.bottomItemInner}><Text>1</Text></View>
+          </View>
+          <View style={styles.bottomItem}>
+            <View style={styles.bottomItemInner}><Text>2</Text></View>
+          </View>
+          <View style={styles.bottomItem}>
+            <View style={styles.bottomItemInner}><Text>3</Text></View>
+          </View>
+          <View style={styles.bottomItem}>
+            <View style={styles.bottomItemInner}><Text>4</Text></View>
+          </View>
         </View>
-      </View>
-
+      </View>     
     );
   }
 }
 
 //component specific styles when you separate with other styles--------------------------
-var componentStyles = StyleSheet.create({
-  titleItalic: {
-    fontStyle: 'italic', 
-    fontWeight: 'normal'
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  top: {
+    height: '45%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#98d2c1'
+  },
+  profileimaage: {
+    width: 140,
+    height: 140,
+    borderRadius: 100,
+    borderWidth: 4,
+    borderColor: '#fff',
+    backgroundColor: '#eee'
+  },
+  center: {
+    height: '10%',
+    backgroundColor: '#7fbcac'
+  },
+  bottom: {
+    height: '45%',
+    backgroundColor: '#292929',
+    flexDirection: 'row', //column
+    flexWrap: 'wrap',
+    padding: 5
+  },
+  bottomItem: {
+    width: '50%',
+    height: '50%',
+    padding: 5,
+    backgroundColor: '#98d2c1'
+  },
+  bottomItemInner: {
+    flex: 1,
+    backgroundColor: 'gray'
   }
 });
